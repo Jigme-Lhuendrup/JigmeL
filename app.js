@@ -10,6 +10,7 @@ const authRoutes = require('./routes/authRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const bookRoutes = require("./routes/bookRoutes");
+const adminRoutes = require('./routes/adminRoutes');
 
 //load environment variables
 dotenv.config();
@@ -51,6 +52,7 @@ app.use('/auth', authRoutes);
 app.use('/', homeRoutes);
 app.use('/', profileRoutes);
 app.use("/", bookRoutes);
+app.use('/', adminRoutes);
 
 //for db connection
 app.get('/db-test', async (req, res) => {
@@ -64,7 +66,7 @@ app.get('/db-test', async (req, res) => {
 
 
 // Start server
-app.listen(PORT, () => {
+app.listen(4000, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
